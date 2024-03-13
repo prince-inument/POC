@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          mapp-client-authorization-code:
+            provider: spring
+            client-id: mapp-client
+            client-secret: secret1
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8082/login/oauth2/code/{registrationId}"
+            scope: openid, articles.read
+            client-name: mapp-client-authorization-code
+        provider:
+          spring:
+            issuer-uri: http://auth-server:9000

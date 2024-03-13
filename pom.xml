@@ -12,6 +12,7 @@
         <module>spring-authorization-server</module>
         <module>resource-server</module>
         <module>client-server</module>
+        <module>client-server-two</module>
     </modules>
 
     <properties>
